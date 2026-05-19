@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --secondary: #6366f1;
+  --accent-green: #22c55e;
+  --accent-purple: #a78bfa;
+  --accent-orange: #fb923c;
+
+  --bg: #f0f9ff;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-nav: rgba(255, 255, 255, 0.75);
+
+  --text: #0f172a;
+  --text-sub: #64748b;
+  --border: rgba(0, 0, 0, 0.07);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
+  --shadow-blue: 0 8px 25px rgba(14, 165, 233, 0.4);
+
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Fraunces', serif;
+}
+
+/* Dark mode */
+[data-theme='dark'] {
+  --bg: #0f172a;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-nav: rgba(15, 23, 42, 0.9);
+  --text: #f1f5f9;
+  --text-sub: #94a3b8;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s, color 0.4s;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: var(--font-body); cursor: pointer; }
+img { max-width: 100%; }
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-18px) scale(1.04); }
+}
+
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: 42%; }
+}
+
+.fade-up   { animation: fadeUp 0.7s ease both; }
+.fade-up-2 { animation: fadeUp 0.7s 0.15s ease both; }
+.fade-up-3 { animation: fadeUp 0.7s 0.30s ease both; }
+.fade-up-4 { animation: fadeUp 0.7s 0.45s ease both; }
